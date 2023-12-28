@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buildr</title>
+
+    <!-- HTML in your document's head -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/stylesheets/normalize.css">
+    <!-- <link rel="stylesheet" href="assets/stylesheets/skeleton.css"> -->
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+</head>
+<body>
+    <div class="img-background"></div>
+    <script>
+        function scroll_percent( elm ){
+            var p = elm.parentNode
+            return (elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight )
+        }
+        let bg_img = document.getElementsByClassName("img-background")[0];
+        window.addEventListener("scroll", () => {
+            // bg_img.style.backgroundSize = toString(100 + 100 * scroll_percent(document.body)) + "%";
+            scroll_y = scroll_percent(document.body);
+            bg_img.style.backgroundSize = `${100 + Math.round(20 * scroll_y)}%`;
+        })
+    </script>
+    <div class="nav-blur"></div>
+    <div class="nav-wrapper">
+        <div class="nav-content">
+            <div class="nav-left"></div>
+            <div class="nav-right">
+                <div class="nav-right-el"><a href="https://google.com" class="nav-right-link">Solutions</a></div>
+                <div class="nav-right-el"><a href="https://google.com" class="nav-right-link">Developers</a></div>
+                <div class="nav-right-el"><a href="https://google.com" class="nav-right-link">Blog</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="page hero-wrapper">
+        <div class="hero-content">
+            <span class="hero-header">Build Evolving Websites</span>
+            <span class="hero-text">Use generative AI and reinforcement learning to boost client engagement</span>
+            <button class="hero-button">Early Access</button>
+        </div>
+    </div>
+    <div class="workflow-wrapper">
+        <div class="workflow-content">
+            <div class="workflow-img"><img src="./assets/images/flowchart.png" width="100%"></div>
+            <div class="workflow-text">
+                <h1 style="font-size: 3rem;">Use reinforcement learning methods to generate apps validated with consumer feedback.</h1>
+                Combine traditional A/B testing with generative AI and modern machine learning tools to help increase your client engagement.
+            </div>
+        </div>
+    </div>
+    <div class="empty-page">
+        Get early access now!
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer-content">
+            <h1>Contact</h1>
+            <p>Interested! Want to learn more! Easily contact our team via Email or Discord. </p>
+            <button class="footer-link">Email</button>
+            <button class="footer-link">Discord</button>
+        </div>
+    </div>
+</body>
+</html>
